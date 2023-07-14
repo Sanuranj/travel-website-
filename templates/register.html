@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+  <title>Register your account</title>
+
+  <style>
+    body {background-color: #62DAED;}
+
+    form {margin: 0 auto;width: 50%;padding: 20px; background-color: #D2F5FA;border-radius: 10px;}
+
+    label { display: inline-block; width: 150px; text-align: center;}
+
+
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"],
+    input[type="radio"] {margin-bottom: 10px;width: 200px;padding: 5px;border-radius: 5px;
+    border: 1px solid #CCCCCC;font-size: 16px;}
+
+    input[type="submit"] {width: 100%;background-color: #4CAF50;color: #FFFFFF;padding: 10px;font-size: 16px;
+    border-radius: 5px;border: none;cursor: pointer;}
+
+    input[type="submit"]:hover {background-color: #3E8E41;}
+
+    .center {text-align: center;}
+
+  </style>
+
+<body>
+<h3 class="center-align">Register your account</h3>
+
+
+<!--<h3> Register your account {text-align:center;} </h3>-->
+<form action="register" method="post">
+    {% csrf_token %}
+     <label>User name</label>
+     <input type="text" name="username" placeholder="Enter your username"><br>
+     <label>first name</label>
+     <input type="text" name="first_name" placeholder="Enter your first name"><br>
+     <label>last name</label>
+     <input type="text" name="last_name" placeholder="Enter  your last name"><br>
+     <label>email</label>
+     <input type="email" name="email" placeholder="Enter your email address"><br>
+     <label>password</label>
+     <input type="password" name="password" placeholder="Enter your password"><br>
+     <label>confirm password</label>
+     <input type="password" name="password1" placeholder="confirm your password"><br>
+     <input type="submit">
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
